@@ -1,7 +1,6 @@
 package com.mycompany.testes.integracao.carro;
 
-public class Portas {
-
+public class Bancos {
     private int quantidade;
     private String material;
     private String cor;
@@ -48,19 +47,17 @@ public class Portas {
         this.estado = estado;
     }
 
-    
-    public String abrir() {
-        System.out.println("Porta aberta");
-        return estado = "aberta";
-    }
-    
-  
-    public String fechar() {
-        System.out.println("Porta fechada");
-        return estado = "fechada";
+
+    public void ajustarEncosto(String posicao) {
+        System.out.println("Encosto ajustado para a posição: " + posicao);
     }
 
-    public boolean isPortaAberta() {
-        return estado.equalsIgnoreCase("aberta");
+    public void ajustarAltura(double novaAltura) {
+        System.out.println("Altura ajustada para: " + novaAltura + " cm");
     }
+
+    public void verificarEstado() {
+        System.out.println("O estado atual dos bancos é: " + estado);
+    }
+
 }
