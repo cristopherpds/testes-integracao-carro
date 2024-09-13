@@ -6,6 +6,7 @@ public class SistemaCombustivel {
     private double nivelDeCombustivel;
     private String marca;
     private boolean estado;
+    private boolean temCombustivel;
 
     public String getTipoCombustive() {
         return tipoCombustive;
@@ -36,6 +37,14 @@ public class SistemaCombustivel {
     }
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public boolean isTemCombustivel() {
+        return temCombustivel;
+    }
+
+    public void setTemCombustivel(boolean temCombustivel) {
+        this.temCombustivel = temCombustivel;
     }
 
     public void verificarNivel(){

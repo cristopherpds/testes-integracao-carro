@@ -6,7 +6,7 @@ public class Portas {
     private String material;
     private String cor;
     private String tipo;
-    private String estado;
+    private boolean estado;
 
     public int getQuantidade() {
         return quantidade;
@@ -40,27 +40,28 @@ public class Portas {
         this.tipo = tipo;
     }
 
-    public String getEstado() {
+    
+    public boolean isEstado() {
         return estado;
     }
-
-    public void setEstado(String estado) {
+    
+    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
-    
-    public String abrir() {
+    public void abrir() {
+        estado = true;
         System.out.println("Porta aberta");
-        return estado = "aberta";
     }
     
   
-    public String fechar() {
+    public void fechar() {
+        estado = false;
         System.out.println("Porta fechada");
-        return estado = "fechada";
+
     }
 
     public boolean isPortaAberta() {
-        return estado.equalsIgnoreCase("aberta");
+        return estado;
     }
 }

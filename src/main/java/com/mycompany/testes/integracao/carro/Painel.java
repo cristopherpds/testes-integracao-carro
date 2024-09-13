@@ -1,31 +1,5 @@
 package com.mycompany.testes.integracao.carro;
 
-/**
- * The Painel class represents a car dashboard panel with various attributes and functionalities.
- * It includes methods to control the display and update information shown on the panel.
- * 
- * Attributes:
- * - tipo: The type of the panel.
- * - display: The display type of the panel.
- * - controle: Indicates if the panel has control features.
- * - marca: The brand of the panel.
- * - estado: The state of the panel (on/off).
- * 
- * Methods:
- * - getTipo(): Returns the type of the panel.
- * - setTipo(String tipo): Sets the type of the panel.
- * - getDisplay(): Returns the display type of the panel.
- * - setDisplay(String display): Sets the display type of the panel.
- * - isControle(): Returns if the panel has control features.
- * - setControle(boolean controle): Sets the control feature of the panel.
- * - getMarca(): Returns the brand of the panel.
- * - setMarca(String marca): Sets the brand of the panel.
- * - isEstado(): Returns the state of the panel (on/off).
- * - setEstado(boolean estado): Sets the state of the panel (on/off).
- * - ligarDisplay(): Turns on the display of the panel.
- * - desligarDisplay(): Turns off the display of the panel.
- * - atualizarInformacoes(String info): Updates the information displayed on the panel.
- */
 public class Painel {
 
     private String tipo;
@@ -89,4 +63,32 @@ public class Painel {
         System.out.println("Informações atualizadas: " + info);
     }
     
+    public static void main(String[] args) {
+        SistemaCombustivel sistemaCombustivel = new SistemaCombustivel();
+        sistemaCombustivel.setEstado(true);
+        
+
+        SistemaEletrico sistemaEletrico = new SistemaEletrico();
+        sistemaEletrico.setEstado(true);
+
+        Luzes luzes = new Luzes(sistemaEletrico);
+        luzes.ligar();
+        luzes.ajustarIntensidade(50); 
+        luzes.desligar(); 
+
+        try {
+            luzes.ajustarIntensidade(70); 
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
+
+        sistemaEletrico.setEstado(false);
+        luzes.ligar(); 
+
+        Portas portas = new Portas();
+        portas.setEstado(false);
+
+        Carro carro = new Carro(null, null, luzes, null, null, null, portas, sistemaCombustivel, null, sistemaEletrico, null, null);
+        carro.ligar();  
+    }
 }
