@@ -1,73 +1,33 @@
 package com.mycompany.testes.integracao.carro;
 
 public class Suspensao {
-
     private String tipo;
     private String material;
     private double altura;
     private int rigidez;
     private String marca;
 
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
+    public Suspensao(String tipo, String material, double altura, int rigidez, String marca) {
         this.tipo = tipo;
-    }
-    public String getMaterial() {
-        return material;
-    }
-    public void setMaterial(String material) {
         this.material = material;
-    }
-    public double getAltura() {
-        return altura;
-    }
-    public void setAltura(double altura) {
         this.altura = altura;
-    }
-    public int getRigidez() {
-        return rigidez;
-    }
-    public void setRigidez(int rigidez) {
         this.rigidez = rigidez;
-    }
-    public String getMarca() {
-        return marca;
-    }
-    public void setMarca(String marca) {
         this.marca = marca;
     }
 
     public void ajustarAltura(double novaAltura) {
-        if (novaAltura >= 0 && novaAltura <= 10) {
-            this.altura = novaAltura;
-        } else {
-            System.out.println("Altura inválida. Deve ser entre 0 e 10.");
-        }
+        this.altura = novaAltura;
+        System.out.println("A altura foi ajustada para: " + this.altura);
     }
-    
+
     public String verificarEstado() {
-        if (this.altura >= 5) {
-            return "Suspensao está em estado alto.";
-        } else if (this.altura >= 3) {
-            return "Suspensao está em estado moderado.";
-        } else {
-            return "Suspensao está em estado baixo.";
+        if (this.altura < 10 || this.rigidez < 50) {
+            return "Suspensão em estado precário";
         }
+        return "Suspensão em bom estado";
     }
 
     public void substituir() {
-        Suspensao novaSuspensao = new Suspensao();
-        novaSuspensao.setTipo(this.tipo);
-        novaSuspensao.setMaterial(this.material);
-        novaSuspensao.setAltura(this.altura);
-        novaSuspensao.setRigidez(this.rigidez);
-        novaSuspensao.setMarca(this.marca);
-        
-        
-        System.out.println("Suspensão substituída com sucesso!");
+        System.out.println("Suspensão substituída.");
     }
-
-
 }

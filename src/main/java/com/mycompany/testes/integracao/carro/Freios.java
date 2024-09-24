@@ -3,51 +3,28 @@ package com.mycompany.testes.integracao.carro;
 public class Freios {
     private String tipo;
     private String material;
-    private Double tamanho;
+    private double tamanho;
     private String marca;
-    private Double nivelDeDesgaste;
+    private double nivelDeDesgaste;
 
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
+    public Freios(String tipo, String material, double tamanho, String marca, double nivelDeDesgaste) {
         this.tipo = tipo;
-    }
-    public String getMaterial() {
-        return material;
-    }
-    public void setMaterial(String material) {
         this.material = material;
-    }
-    public Double getTamanho() {
-        return tamanho;
-    }
-    public void setTamanho(Double tamanho) {
         this.tamanho = tamanho;
-    }
-    public String getMarca() {
-        return marca;
-    }
-    public void setMarca(String marca) {
         this.marca = marca;
-    }
-    public Double getNivelDeDesgaste() {
-        return nivelDeDesgaste;
-    }
-    public void setNivelDeDesgaste(Double nivelDeDesgaste) {
         this.nivelDeDesgaste = nivelDeDesgaste;
     }
 
-    
-    public Double verificarDesgaste() {
-        return this.nivelDeDesgaste;
+    public double verificarDesgaste() {
+        return nivelDeDesgaste;  // Retorna o nível de desgaste
     }
 
     public void substituirPastilhas() {
-        
+        this.nivelDeDesgaste = 0;  // Após substituição, desgaste zera
+        System.out.println("Pastilhas de freio substituídas.");
     }
 
-    public void ajustarFreio(Double percentual) {
-        this.nivelDeDesgaste += (percentual / 100) * this.nivelDeDesgaste;
+    public void ajustarFreio() {
+        System.out.println("Sistema de freios ajustado.");
     }
 }

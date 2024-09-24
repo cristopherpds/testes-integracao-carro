@@ -1,67 +1,31 @@
 package com.mycompany.testes.integracao.carro;
 
 public class Portas {
-
     private int quantidade;
     private String material;
     private String cor;
     private String tipo;
-    private boolean estado;
+    private String estado;
 
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
+    public Portas(int quantidade, String material, String cor, String tipo, String estado) {
         this.quantidade = quantidade;
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
         this.material = material;
-    }
-
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
         this.cor = cor;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    
-    public boolean isEstado() {
-        return estado;
-    }
-    
-    public void setEstado(boolean estado) {
         this.estado = estado;
     }
 
     public void abrir() {
-        estado = true;
-        System.out.println("Porta aberta");
+        this.estado = "Aberta";
+        System.out.println("Porta(s) aberta(s).");
     }
-    
-  
+
     public void fechar() {
-        estado = false;
-        System.out.println("Porta fechada");
-
+        this.estado = "Fechada";
+        System.out.println("Porta(s) fechada(s).");
     }
 
-    public boolean isPortaAberta() {
-        return estado;
+    public String verificarEstado() {
+        return "Estado das portas: " + this.estado;
     }
 }
