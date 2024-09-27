@@ -29,4 +29,46 @@ public class SistemaDirecao {
     public void substituirComponente(String componente) {
         System.out.println("Componente " + componente + " da direção substituído.");
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public boolean isAssistido() {
+        return assistido;
+    }
+
+    public void setAssistido(boolean assistido) {
+        this.assistido = assistido;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public double getRelacao() {
+        return relacao;
+    }
+
+    public void setRelacao(double relacao) {
+        this.relacao = relacao;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    
 }

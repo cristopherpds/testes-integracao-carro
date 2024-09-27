@@ -23,6 +23,7 @@ public class Carro {
     private SistemaTransmissao transmissao;
     private Luzes luzes;  // Adicionando o componente Luzes
 
+    
     // Construtor
     public Carro(String modelo, int ano, String cor, String placa, double quilometragem,
                  Suspensao suspensao, Freios freios, Motor motor, Pneus pneus, SistemaCombustivel sistemaCombustivel, 
@@ -45,6 +46,30 @@ public class Carro {
         this.bancos = bancos;
         this.transmissao = transmissao;
         this.luzes = luzes;
+    }
+
+    public static void main(String[] args) {
+        // Criando os componentes do carro
+        Suspensao suspensao = new Suspensao("Esportiva", "Aço", 20, 80, "MarcaX");
+        Freios freios = new Freios("ABS", "Cerâmica", 15, "MarcaY", 30);  // Freios com 30% de desgaste
+        Motor motor = new Motor("V8", 500, 4.5, "MarcaZ", false);
+        Pneus pneus = new Pneus("205/55R16", "Radial", 32, "MarcaA", "Novo");
+        SistemaCombustivel sistemaCombustivel = new SistemaCombustivel("Gasolina", 50, 20, "MarcaB", true);  // Combustível ok
+        SistemaEletrico sistemaEletrico = new SistemaEletrico(12, 100, "Íon de Lítio", true);  // Bateria ok
+        SistemaDirecao sistemaDirecao = new SistemaDirecao("Hidráulica", true, "Aço", 15, "MarcaD");  // Direção ok
+        Painel painel = new Painel("Digital", "LCD", true, "MarcaPainel", false);
+        Portas portas = new Portas(4, "Alumínio", "Preto", "Automática", "Fechada");
+        Bancos bancos = new Bancos(5, "Couro", "Preto", "Reclinável", "Bom");
+        SistemaTransmissao transmissao = new SistemaTransmissao("Automática", 6, "Aço", "MarcaT", true);  // Transmissão ok
+        Luzes luzes = new Luzes("LED", 100, "Branco", false, "ModeloLuzes");  // Luzes desligadas
+
+        // Criando o carro com todos os componentes
+        Carro carro = new Carro("Modelo A", 2021, "Preto", "ABC-1234", 0, suspensao, freios, motor, pneus, sistemaCombustivel, sistemaEletrico, sistemaDirecao, painel, portas, bancos, transmissao, luzes);
+
+        // Tentando ligar o carro
+        carro.ligar();  // Vai verificar todas as condições antes de ligar
+
+        carro.desligar();  // Desligando o carro
     }
 
     // Método para ligar o carro
@@ -123,26 +148,144 @@ public class Carro {
         System.out.println("O carro está desligado.");
     }
 
-    public static void main(String[] args) {
-        // Criando os componentes do carro
-        Suspensao suspensao = new Suspensao("Esportiva", "Aço", 20, 80, "MarcaX");
-        Freios freios = new Freios("ABS", "Cerâmica", 15, "MarcaY", 30);  // Freios com 30% de desgaste
-        Motor motor = new Motor("V8", 500, 4.5, "MarcaZ", false);
-        Pneus pneus = new Pneus("205/55R16", "Radial", 32, "MarcaA", "Novo");
-        SistemaCombustivel sistemaCombustivel = new SistemaCombustivel("Gasolina", 50, 20, "MarcaB", true);  // Combustível ok
-        SistemaEletrico sistemaEletrico = new SistemaEletrico(12, 100, "Íon de Lítio", true);  // Bateria ok
-        SistemaDirecao sistemaDirecao = new SistemaDirecao("Hidráulica", true, "Aço", 15, "MarcaD");  // Direção ok
-        Painel painel = new Painel("Digital", "LCD", true, "MarcaPainel", false);
-        Portas portas = new Portas(4, "Alumínio", "Preto", "Automática", "Fechada");
-        Bancos bancos = new Bancos(5, "Couro", "Preto", "Reclinável", "Bom");
-        SistemaTransmissao transmissao = new SistemaTransmissao("Automática", 6, "Aço", "MarcaT", true);  // Transmissão ok
-        Luzes luzes = new Luzes("LED", 100, "Branco", false, "ModeloLuzes");  // Luzes desligadas
+   
 
-        // Criando o carro com todos os componentes
-        Carro carro = new Carro("Modelo A", 2021, "Preto", "ABC-1234", 0, suspensao, freios, motor, pneus, sistemaCombustivel, sistemaEletrico, sistemaDirecao, painel, portas, bancos, transmissao, luzes);
-
-        // Tentando ligar o carro
-        carro.ligar();  // Vai verificar todas as condições antes de ligar
-        carro.desligar();  // Desligando o carro
+    public String getModelo() {
+        return modelo;
     }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public double getQuilometragem() {
+        return quilometragem;
+    }
+
+    public void setQuilometragem(double quilometragem) {
+        this.quilometragem = quilometragem;
+    }
+
+    public Suspensao getSuspensao() {
+        return suspensao;
+    }
+
+    public void setSuspensao(Suspensao suspensao) {
+        this.suspensao = suspensao;
+    }
+
+    public Freios getFreios() {
+        return freios;
+    }
+
+    public void setFreios(Freios freios) {
+        this.freios = freios;
+    }
+
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
+    public Pneus getPneus() {
+        return pneus;
+    }
+
+    public void setPneus(Pneus pneus) {
+        this.pneus = pneus;
+    }
+
+    public SistemaCombustivel getSistemaCombustivel() {
+        return sistemaCombustivel;
+    }
+
+    public void setSistemaCombustivel(SistemaCombustivel sistemaCombustivel) {
+        this.sistemaCombustivel = sistemaCombustivel;
+    }
+
+    public SistemaEletrico getSistemaEletrico() {
+        return sistemaEletrico;
+    }
+
+    public void setSistemaEletrico(SistemaEletrico sistemaEletrico) {
+        this.sistemaEletrico = sistemaEletrico;
+    }
+
+    public SistemaDirecao getSistemaDirecao() {
+        return sistemaDirecao;
+    }
+
+    public void setSistemaDirecao(SistemaDirecao sistemaDirecao) {
+        this.sistemaDirecao = sistemaDirecao;
+    }
+
+    public Painel getPainel() {
+        return painel;
+    }
+
+    public void setPainel(Painel painel) {
+        this.painel = painel;
+    }
+
+    public Portas getPortas() {
+        return portas;
+    }
+
+    public void setPortas(Portas portas) {
+        this.portas = portas;
+    }
+
+    public Bancos getBancos() {
+        return bancos;
+    }
+
+    public void setBancos(Bancos bancos) {
+        this.bancos = bancos;
+    }
+
+    public SistemaTransmissao getTransmissao() {
+        return transmissao;
+    }
+
+    public void setTransmissao(SistemaTransmissao transmissao) {
+        this.transmissao = transmissao;
+    }
+
+    public Luzes getLuzes() {
+        return luzes;
+    }
+
+    public void setLuzes(Luzes luzes) {
+        this.luzes = luzes;
+    }
+
+
+    
 }

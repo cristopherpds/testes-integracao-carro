@@ -29,4 +29,30 @@ public class SistemaEletrico {
             System.out.println("Falha no sistema elétrico.");
         }
     }
+
+    public double getVoltagem() {
+        return voltagem;
+    }
+
+    public void setVoltagem(double voltagem) {
+        this.voltagem = voltagem;
+    }
+
+    public double getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(double capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public String getTipoDeBateria() {
+        return tipoDeBateria;
+    }
+
+    public void setTipoDeBateria(String tipoDeBateria) {
+        this.tipoDeBateria = tipoDeBateria;
+    }
+
+    
 }

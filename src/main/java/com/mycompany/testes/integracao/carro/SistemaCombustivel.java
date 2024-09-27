@@ -27,4 +27,46 @@ public class SistemaCombustivel {
     public void substituirTanque() {
         System.out.println("Tanque de combustível substituído.");
     }
+
+    public String getTipoDeCombustivel() {
+        return tipoDeCombustivel;
+    }
+
+    public void setTipoDeCombustivel(String tipoDeCombustivel) {
+        this.tipoDeCombustivel = tipoDeCombustivel;
+    }
+
+    public double getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(double capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public double getNivelDeCombustivel() {
+        return nivelDeCombustivel;
+    }
+
+    public void setNivelDeCombustivel(double nivelDeCombustivel) {
+        this.nivelDeCombustivel = nivelDeCombustivel;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    
 }
