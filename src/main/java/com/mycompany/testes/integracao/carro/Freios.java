@@ -60,5 +60,13 @@ public class Freios {
         this.marca = marca;
     }
 
+    public double getNivelDeDesgaste() {
+        return nivelDeDesgaste;
+    }
+
+    public void setNivelDeDesgaste(double nivelDeDesgaste) {
+        this.nivelDeDesgaste = nivelDeDesgaste;
+    }
+
     
 }

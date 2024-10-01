@@ -55,5 +55,21 @@ public class Suspensao {
         this.marca = marca;
     }
 
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public int getRigidez() {
+        return rigidez;
+    }
+
+    public void setRigidez(int rigidez) {
+        this.rigidez = rigidez;
+    }
+
     
 }
